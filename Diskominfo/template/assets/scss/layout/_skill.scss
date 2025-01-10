@@ -1,0 +1,142 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Skill CSS
+----------------------------------------*/
+.skill-section {
+    position: relative;
+    overflow: hidden;
+    .man {
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom left;
+        width: 550px;
+        height: 730px;
+        position: absolute;
+        left: 52%;
+        bottom: 0;
+        @include breakpoint(md) {
+            position: relative;
+            text-align: center;
+            left: 0;
+            width: 100%;
+            margin: 0 auto;
+            background-position: center bottom;
+        }
+        @include breakpoint(sm) {
+            height: 440px;
+        }
+    }
+    .section-heading {
+        margin-bottom: 30px;
+        .section-title {
+            margin-bottom: 15px;
+        }
+    }
+}
+.skills-item {
+    overflow: hidden;
+    padding-bottom: 8px;
+    &:not(:last-of-type) {
+        margin-bottom: 30px;
+    }
+    .title-wrap {
+        @include flex-vertical-center;
+        margin-bottom: 10px;
+        .progress-count {
+            color: var(--mt-color-theme-primary);
+            padding-right: 10px;
+            margin-right: 5px;
+            position: relative;
+            font-family: var(--mt-ff-body);
+            font-size: 16px;
+            font-weight: 500;
+            &:before {
+                background-color: var(--mt-color-heading-primary);
+                content: "";
+                width: 5px;
+                height: 2px;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+            }
+            span {
+                font-family: var(--mt-ff-body);
+                margin-bottom: 0.5px;
+            }
+        }
+        .title {
+            font-family: var(--mt-ff-body);
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+    }
+    .progress {
+        background-color: #f6f3fc;
+        height: 5px;
+        overflow: visible;
+        .progress-bar {
+            background-color: var(--mt-color-theme-primary);
+            position: relative;
+            overflow: visible;
+            .arrow {
+                position: absolute;
+                right: -5px;
+                width: 20px;
+                height: 20px;
+                transform: rotate(90deg);
+                @include flex-center;
+                i {
+                    font-size: 20px;
+                    color: var(--mt-color-theme-primary);
+                }
+                i:last-child {
+                    color: var(--mt-color-common-white);
+                    font-size: 12px;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}
+
+.skill-btn-wrap{
+    @include flex-vertical-center;
+    flex-wrap: wrap;
+    row-gap: 15px;
+    column-gap: 50px;
+    margin-top: 40px;
+    .skill-number{
+        @include flex-vertical-center;
+        column-gap: 20px;
+        i{
+            background-color: var(--mt-color-theme-primary);
+            font-size: 22px;
+            height: 55px;
+            width: 55px;
+            @include flex-center;
+            border-radius: 50%;
+            color: var(--mt-color-common-white);
+        }
+        .numbers{
+            a{
+                font-family: var(--mt-ff-body);
+                color: var(--mt-color-heading-primary);
+                display: block;
+                font-size: 18px;
+                font-weight: 500;
+                &:hover{
+                    color: var(--mt-color-theme-primary);
+                }
+            }
+        }
+    }
+}
+
+/* !END: Theme Skill CSS */

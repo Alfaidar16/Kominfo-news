@@ -1,0 +1,266 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Solution CSS
+----------------------------------------*/
+.solution-section {
+    background-color: #111;
+    @include background;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    &:after,
+    &:before {
+        background-color: var(--mt-color-common-white);
+        content: "";
+        width: 100%;
+        height: 200px;
+        position: absolute;
+        top: -1px;
+        left: 0;
+        clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+        z-index: -1;
+        @include breakpoint(md){
+            height: 190px;
+        }
+        @include breakpoint(sm){
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+    }
+    &:after {
+        top: auto;
+        bottom: 120px;
+        clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .section-heading {
+        margin-bottom: 45px;
+    }
+}
+
+.solution-tab {
+    .nav-pills{
+        row-gap: 10px;
+    }
+    .nav-item {
+        @include breakpoint(sm){
+            &:not(:last-of-type){
+                margin-right: 10px;
+            }
+        }
+        .nav-link {
+            font-family: var(--mt-ff-heading);
+            background-color: var(--mt-color-grey-2);
+            color: var(--mt-color-heading-primary);
+            font-size: 22px;
+            font-weight: 700;
+            border-radius: 0;
+            padding: 10px 25px;
+            @include flex-vertical-center;
+            column-gap: 10px;
+            img{
+                width: 20px;
+                @include breakpoint(md){
+                    width: 16px;
+                }
+            }
+            @include breakpoint(md){
+                font-size: 17px;
+            }
+            @include breakpoint(sm){
+                font-size: 14px;
+                padding: 7px 10px;
+            }
+            &.active {
+                background-color: var(--mt-color-theme-primary);
+                color: var(--mt-color-common-white);
+                img{
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+    }
+}
+
+.solution-content {
+    .solution-header {
+        margin-bottom: 30px;
+        .title {
+            color: var(--mt-color-common-white);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        p {
+            color: var(--mt-color-common-white);
+            max-width: 485px;
+            width: 100%;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .solution-box {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 95px 1fr;
+        grid-gap: 10px;
+        padding: 30px;
+        border: 1px solid #323539;
+        img {
+            height: 95px;
+            width: 95px;
+        }
+        .solution-list {
+            li {
+                font-family: var(--mt-ff-body);
+                color: var(--mt-color-common-white);
+                font-size: 16px;
+                @include flex-vertical-center;
+                line-height: 1;
+                i {
+                    font-size: 12px;
+                    color: var(--mt-color-theme-secondary);
+                    margin-right: 5px;
+                }
+                &:nth-child(2) {
+                    i {
+                        color: var(--mt-color-theme-primary);
+                    }
+                }
+                &:nth-child(3) {
+                    i {
+                        color: var(--mt-color-common-purple);
+                    }
+                }
+                &:not(:last-of-type) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+    .solution-icon {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 70px 1fr;
+        grid-gap: 30px;
+        margin: 30px 0 50px 0;
+        .icon {
+            background-color: var(--mt-color-theme-primary);
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            @include flex-center;
+        }
+        .title {
+            color: var(--mt-color-common-white);
+            margin-bottom: 0;
+            span {
+                font-family: var(--mt-ff-body);
+                font-size: 17px;
+                font-weight: 400;
+                display: block;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+.solution-counter {
+    .row > div {
+        padding: 0;
+        @include breakpoint(sm){
+            padding: 0 15px;
+        }
+    }
+    .counter-item {
+        background-color: transparent;
+        box-shadow: none;
+        position: relative;
+        z-index: 1;
+        overflow: visible;
+        @include breakpoint(sm){
+            margin-bottom: 20px;
+        }
+        .shape {
+            display: none;
+        }
+        &:before {
+            background-color: var(--mt-color-common-white);
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-shadow: 0px 0px 117px 0px rgba(196, 206, 213, 0.24);
+            z-index: -1;
+            @include transition(all 0.3s ease-in-out);
+            transform: skew(-5.2deg, 0deg);
+        }
+        &:hover {
+            p,
+            .title {
+                color: var(--mt-color-heading-primary);
+            }
+            .counter-icon {
+                border: none;
+            }
+        }
+    }
+}
+
+.solution-content-wrap {
+    padding-right: 15px;
+}
+
+.solution-img {
+    padding-top: 90px;
+    height: 100%;
+    width: 712px;
+    position: relative;
+    z-index: 1;
+    @include breakpoint(md){
+        margin: 0 auto;
+    }
+    @include breakpoint(sm){
+        width: 100%;
+        padding-top: 50px;
+    }
+    &:before {
+        content: "";
+        width: 43px;
+        height: 255px;
+        border: 1px solid var(--mt-color-common-white);
+        position: absolute;
+        top: 50%;
+        left: -8px;
+        transform: skew(-5.2deg, 0deg);
+        z-index: -1;
+    }
+    &:after {
+        content: "";
+        width: 43px;
+        height: 365px;
+        border: 1px solid var(--mt-color-common-white);
+        position: absolute;
+        top: 20%;
+        right: -8px;
+        transform: skew(-5.2deg, 0deg);
+        z-index: -1;
+    }
+    img {
+        height: 100%;
+    }
+}
+
+.solution-wrap:before {
+    background-color: var(--mt-color-common-white);
+    content: "";
+    height: 127px;
+    width: 100%;
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+}
+
+/* !END: Theme Solution CSS */

@@ -1,0 +1,258 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Service CSS
+----------------------------------------*/
+
+.service-item {
+    background-color: var(--mt-color-common-white);
+    padding: 50px 40px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 50px;
+    .shape {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: 55px;
+        right: -40px;
+        z-index: -1;
+        svg {
+            fill: #ddd;
+            @include transition(all 0.3s ease-in-out);
+            opacity: 0.5;
+        }
+    }
+    &:after,
+    &:before {
+        background-color: var(--mt-color-theme-primary);
+        content: "";
+        height: 90px;
+        width: 80px;
+        position: absolute;
+        bottom: -70px;
+        right: -50px;
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-137deg);
+        z-index: -1;
+        @include transition(all 0.3s ease-in-out);
+    }
+    &:after {
+        right: auto;
+        left: -50px;
+        transform: rotate(137deg);
+    }
+    .service-icon {
+        color: var(--mt-color-heading-primary);
+        font-size: 30px;
+        height: 90px;
+        width: 90px;
+        @include flex-center;
+        margin: 0 auto 30px;
+        border: 2px dashed transparent;
+        position: relative;
+        border-radius: 10px;
+        @include transition(all 0.3s ease-in-out);
+        i {
+            @include transition(all 0.3s ease-in-out);
+        }
+        &:before {
+            background-color: var(--mt-color-theme-primary);
+            content: "";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            z-index: -1;
+            @include transition(all 0.3s ease-in-out);
+        }
+    }
+    .title {
+        font-weight: 700;
+        margin-bottom: 20px;
+        a {
+            &:hover {
+                color: var(--mt-color-theme-primary);
+            }
+        }
+    }
+    .read-more {
+        background-color: var(--mt-color-grey-2);
+        font-family: var(--mt-ff-body);
+        color: var(--mt-color-text-body);
+        display: inline-block;
+        align-items: center;
+        font-size: 16px;
+        line-height: 1;
+        font-weight: 500;
+        padding: 5px 10px 4px;
+        margin-top: 10px;
+        text-transform: uppercase;
+        @include transition(all 0.3s ease-in-out);
+        &:hover {
+            background-color: var(--mt-color-theme-primary);
+            color: var(--mt-color-common-white);
+        }
+        i {
+            margin-left: 5px;
+        }
+    }
+    &:hover {
+        &:before {
+            bottom: -60px;
+            right: -40px;
+        }
+        &:after {
+            right: auto;
+            left: -40px;
+            bottom: -60px;
+        }
+        .shape {
+            svg {
+                fill: var(--mt-color-theme-primary);
+            }
+        }
+        .service-icon {
+            border-color: var(--mt-color-theme-primary);
+            transform: rotate(10deg);
+            &:before {
+                transform: rotate(-20deg);
+            }
+        }
+    }
+    &.item-2 {
+        .service-icon {
+            color: var(--mt-color-common-white);
+        }
+    }
+    &.img-item{
+        height: 100%;
+        padding: 0;
+        &:after,
+        &:before{
+            display: none;
+        }
+        .service-img{
+            height: 100%;
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.service-page{
+    .service-item{
+        border: 1px solid var(--mt-color-border-1);
+    }
+}
+
+/* Service Details */
+
+.service-details-top{
+    margin-bottom: 50px;
+    .service-details-thumb{
+        height: 100%;
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .service-list-wrap{
+        background-color: var(--mt-color-grey-1);
+        padding: 50px 35px;
+        .title{
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .service-list{
+            list-style: none;
+            li{
+                &:not(:last-of-type){
+                    margin-bottom: 25px;
+                }
+                a{
+                    background-color: var(--mt-color-common-white);
+                    font-family: var(--mt-ff-body);
+                    font-size: 18px;
+                    color: var(--mt-color-heading-primary);
+                    font-weight: 600;
+                    line-height: 1;
+                    padding: 8px 5px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    column-gap: 10px;
+                    border-radius: 30px;
+                    border: 1px solid var(--mt-color-border-1);
+                    i{
+                        color: var(--mt-color-theme-secondary);
+                        font-size: 25px;
+                        line-height: 1;
+                        @include transition(all 0.3s ease-in-out);
+                    }
+                    &:hover{
+                        background-color: var(--mt-color-theme-secondary);
+                        i{
+                            color: var(--mt-color-common-black);
+                        }
+                    }
+                }
+                &:nth-child(2){
+                    a{
+                        &:hover{
+                            color: var(--mt-color-common-white);
+                            i{
+                                color: var(--mt-color-common-white);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.service-details-content{
+    .title{
+        font-weight: 700;
+    }
+    .details-box{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        margin: 30px 0;
+        @include breakpoint(md){
+            grid-template-columns: 1fr;
+        }
+        .about-info-2{
+            .about-list{
+                li{
+                    color: var(--mt-color-heading-primary);
+                }
+            }
+            .btn-content{
+                color: var(--mt-color-heading-primary);
+                margin-bottom: 0;
+            }
+        }
+        .details-thumb{
+            @include flex-vertical-center;
+            column-gap: 20px;
+            @include breakpoint(sm){
+                flex-direction: column;
+                row-gap: 20px;
+            }
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
+
+/* !END: Theme Service CSS */

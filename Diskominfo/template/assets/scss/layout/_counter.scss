@@ -1,0 +1,277 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Sponsor CSS
+----------------------------------------*/
+
+.counter-section {
+    position: relative;
+    z-index: 1;
+    .bg-color {
+        background-color: var(--mt-color-grey-1);
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        @include breakpoint(sm) {
+            display: none;
+        }
+    }
+}
+
+.cta-icon {
+    color: var(--mt-color-theme-primary);
+}
+
+.counter-item {
+    background-color: var(--mt-color-common-white);
+    text-align: center;
+    padding: 50px 50px;
+    box-shadow: 0px 0px 117px 0px rgba(196, 206, 213, 0.24);
+    @include transition(all 0.3s ease-in-out);
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    @include breakpoint(md) {
+        padding: 50px 20px;
+    }
+    .shape {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: -82px;
+        left: 0;
+        z-index: -1;
+        visibility: hidden;
+        opacity: 0;
+        @include breakpoint(md) {
+            top: -50px;
+        }
+    }
+    .counter-icon {
+        background-color: var(--mt-color-theme-secondary);
+        color: var(--mt-color-heading-primary);
+        font-size: 30px;
+        height: 100px;
+        width: 100px;
+        margin: 0 auto;
+        @include flex-center;
+        border-radius: 50%;
+        margin-bottom: 25px;
+        border: 5px solid transparent;
+        @include transition(all 0.5s ease-in-out);
+        img{
+            @include transition(all 0.3s ease-in-out);
+        }
+    }
+    .title {
+        font-family: var(--mt-ff-heading);
+        font-size: 51px;
+        font-weight: 700;
+        margin-bottom: 5px;
+        letter-spacing: -2px;
+        @include transition(0.5s);
+        @include breakpoint(md) {
+            font-size: 35px;
+        }
+        .odometer-auto-theme {
+            font-family: inherit;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+    }
+    p {
+        font-family: var(--mt-ff-body);
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 0;
+        @include transition(all 0.5s ease-in-out);
+        @include breakpoint(md) {
+            font-size: 14px;
+        }
+    }
+    &:hover {
+        background-color: #11233e;
+        .shape {
+            visibility: visible;
+            opacity: 1;
+            @include transition(all 0.2s ease-in-out);
+            transition-delay: 0.2s;
+        }
+        .counter-icon {
+            background-color: var(--mt-color-theme-primary);
+            color: var(--mt-color-common-white);
+            border: 5px solid var(--mt-color-common-white);
+            img{
+                filter: brightness(0) invert(1);
+            }
+        }
+        p,
+        .title {
+            color: var(--mt-color-common-white);
+        }
+    }
+}
+
+// Counter 2
+
+.counter-2{
+    padding: 80px 0 80px 0;
+    @include breakpoint(md){
+        padding-bottom: 0;
+    }
+    .section-heading{
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #323539;
+        .section-title{
+            margin-bottom: 15px;
+            @include breakpoint(md){
+                max-width: 500px;
+                width: 100%;
+            }
+        }
+        p{
+            @include breakpoint(md){
+                max-width: 500px;
+                width: 100%;
+            }
+        }
+    }
+    .counter-item{
+        &:hover{
+            .counter-icon{
+                img{
+                    filter: brightness(0) invert(0);
+                }
+            }
+        }
+    }
+}
+
+.counter-info{
+    .counter-list{
+        @include flex-vertical-center;
+        column-gap: 30px;
+        flex-wrap: wrap;
+        row-gap: 10px;
+        list-style: none;
+        li{
+            font-size: 16px;
+            color: var(--mt-color-common-white);
+            @include flex-vertical-center;
+            column-gap: 10px;
+            i{
+                color: var(--mt-color-theme-primary);
+            }
+        }
+    }
+    .counter-author{
+        background-color: var(--mt-color-common-white);
+        display: inline-flex;
+        align-items: center;
+        column-gap: 20px;
+        padding: 5px 15px 5px 8px;
+        border-radius: 30px;
+        margin: 30px 0;
+        img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .name{
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 0;
+            span{
+                font-family: var(--mt-ff-body);
+                color: var(--mt-color-text-body);
+                font-size: 16px;
+                font-weight: 400;
+                margin-left: 5px;
+            }
+        }
+    }
+    .hero-btn-wrap{
+        .video-btn{
+            .play-btn{
+                background-color: var(--mt-color-common-white);
+                width: 60px;
+                height: 60px;
+                img{
+                    @include transition (all 0.3s ease-in-out);
+                }
+                &:hover{
+                    img{
+                        filter: brightness(0) invert(1);
+                    }
+                }
+            }
+            span{
+                color: var(--mt-color-common-white);
+            }
+        }
+    }
+    .white-content{
+        p{
+            margin-bottom: 0;
+        }
+    }
+}
+
+.counter-wrap{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    position: relative;
+    z-index: 1;
+    @include breakpoint(md){
+        padding: 50px 100px 0;
+    }
+    @include breakpoint(sm){
+        grid-template-columns: 1fr;
+        padding: 50px 50px 0;
+    }
+    .bg-img{
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+    .counter-item{
+        border-radius: 50%;
+        &:hover{
+            background-color: var(--mt-color-theme-primary);
+            .counter-icon{
+                background-color: #fff;
+                border: none;
+                i{
+                    color: var(--mt-color-theme-primary);
+                }
+            }
+        }
+    }
+}
+
+.team-counter{
+    .counter-item{
+        &:hover{
+            .counter-icon{
+                img{
+                    filter: inherit;
+                }
+            }
+        }
+    }
+}
+
+/* !END: Theme Sponsor CSS */

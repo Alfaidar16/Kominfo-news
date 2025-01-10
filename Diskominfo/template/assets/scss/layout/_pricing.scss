@@ -1,0 +1,113 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Pricing CSS
+----------------------------------------*/
+.pricing-section{
+    margin-bottom: -150px;
+    position: relative;
+    z-index: 2;
+}
+
+.pricing-carousel {
+    padding-bottom: 80px;
+    @include breakpoint(sm) {
+        padding-bottom: 50px;
+    }
+}
+
+.pricing-item {
+    background-color: var(--mt-color-grey-2);
+    padding: 50px 0 45px 0;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 10px;
+    @include transition(all 0.3s ease-in-out);
+    &:hover {
+        background-color: #051d1f;
+    }
+    .sub-title {
+        font-family: var(--mt-ff-body);
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+    }
+    &:hover {
+        .sub-title {
+            color: var(--mt-color-common-white);
+        }
+    }
+    .title {
+        background-color: var(--mt-color-theme-secondary);
+        font-size: 40px;
+        margin-bottom: 0;
+        line-height: 1;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 10px 0;
+        margin-bottom: 25px;
+        span {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+    }
+    &:hover {
+        .title {
+            background-color: var(--mt-color-theme-primary);
+            color: var(--mt-color-common-white);
+        }
+    }
+    .pricing-list {
+        list-style: none;
+        margin-bottom: 30px;
+        padding: 0 50px;
+        @include breakpoint(lg) {
+            padding: 0 20px 0 40px;
+        }
+        @include breakpoint(md) {
+            padding: 0 90px;
+        }
+        @include breakpoint(sm) {
+            padding: 0 110px;
+        }
+        li {
+            font-family: var(--mt-ff-body);
+            font-size: 16px;
+            color: var(--mt-color-text-body);
+            @include flex-vertical-center;
+            @include transition(all 0.3s ease-in-out);
+
+            &:not(:last-of-type) {
+                margin-bottom: 10px;
+            }
+            i {
+                margin-right: 10px;
+            }
+        }
+    }
+    &:hover {
+        .pricing-list li {
+            color: var(--mt-color-common-white);
+            &:hover {
+                color: var(--mt-color-theme-primary);
+            }
+        }
+    }
+    &.item-2 {
+        .title {
+            color: var(--mt-color-common-white);
+        }
+        .mt-primary-btn {
+            color: var(--mt-color-common-white);
+        }
+    }
+}
+
+.pricing-2{
+    margin-bottom: 0;
+}
+
+/* !END: Theme Pricing CSS */

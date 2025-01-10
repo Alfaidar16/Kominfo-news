@@ -1,0 +1,27 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Content CSS
+----------------------------------------*/
+
+.content-info{
+    padding-right: 30px;
+    @include breakpoint(md){
+        padding-right: 0;
+    }
+    .section-heading{
+        margin-bottom: 30px;
+        .sub-heading{
+            margin-bottom: 20px;
+        }
+        .section-title{
+            margin-bottom: 20px;
+        }
+        p{
+            max-width: 400px;
+            width: 100%;
+        }
+    }
+}
+
+/* !END: Theme Content CSS */

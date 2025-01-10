@@ -1,0 +1,17 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Sponsor CSS
+----------------------------------------*/
+
+.sponsor-item {
+    text-align: center;
+    img {
+        max-width: 180px;
+    }
+    @include breakpoint(md) {
+        text-align: center;
+    }
+}
+
+/* !END: Theme Sponsor CSS */

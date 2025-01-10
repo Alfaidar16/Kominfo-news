@@ -1,0 +1,81 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Page Header CSS
+----------------------------------------*/
+
+.page-header{
+    @include background;
+    background-position: -25px center;
+    width: 100%;
+    height: 645px;
+    @include flex-vertical-center;
+    position: relative;
+    @include breakpoint(xxxl){
+        background-position: -150px center;
+    }
+    @include breakpoint(md){
+        background-position: 0 center;
+        height: auto;
+        padding: 100px 0;
+        background-image: inherit!important;
+    }
+    .custom-container{
+        max-width: 1420px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    .shapes{
+        .shape{
+            position: absolute;
+            top: 10%;
+            left: 0;
+            &.shape-2{
+                left: auto;
+                right: 80px;
+            }
+            &.shape-3{
+                top: auto;
+                bottom: 10%;
+                left: 5%;
+            }
+        }
+    }
+}
+
+.page-header-thumb{
+    height: 100%;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.page-header-content{
+    padding-top: 130px;
+    padding-left: 125px;
+    @include breakpoint(md){
+        padding-top: 0;
+        padding-left: 80px;
+    }
+    .title{
+        color: var(--mt-color-heading-primary);
+        font-size: 50px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        @include breakpoint(sm){
+            font-size: 30px;
+        }
+    }
+    .sub-title{
+        font-family: var(--mt-ff-body);
+        font-size: 16px;
+        font-weight: 400;
+        .inner-page{
+            color: var(--mt-color-theme-primary);
+        }
+    }
+}
+
+/* !END: Theme Page Header CSS */

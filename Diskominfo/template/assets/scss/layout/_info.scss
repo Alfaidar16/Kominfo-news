@@ -1,0 +1,131 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Info CSS
+----------------------------------------*/
+
+.info-wrap{
+    @include background;
+    max-width: 1420px;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 30px;
+    padding-left: 125px;
+    padding-right: 125px;
+    @include flex-vertical-center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    position: relative;
+    overflow: hidden;
+    @include breakpoint(lg){
+        flex-direction: column;
+        row-gap: 30px;
+        justify-content: flex-start;
+        align-items: baseline;
+    }
+    @include breakpoint(md){
+        padding-left: 50px;
+        border-radius: 0;
+    }
+    
+    @include breakpoint(sm){
+        padding: 30px;
+    }
+    .robot{
+        width: 320px;
+        height: 400px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        z-index: 1;
+        &:after,
+        &:before{
+            background-color: var(--mt-color-theme-primary);
+            content: "";
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -100px;
+            left: -60px;
+            z-index: -2;
+        }
+        &:after{
+            background-color: var(--mt-color-theme-secondary);
+            left: auto;
+            right: -60px;
+        }
+        @include breakpoint(lg){
+            left: auto;
+            right: 125px;
+        }
+        @include breakpoint(md){
+            right: 50px;
+            width: 258px;
+            height: 320px;
+        }
+        @include breakpoint(sm){
+            position: inherit;
+            left: 0;
+            right: 0;
+            width: 100%;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .info-left{
+        .section-heading{
+            margin-bottom: 30px;
+            .section-title{
+                max-width: 500px;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            p{
+                color: var(--mt-color-heading-primary);
+                max-width: 500px;
+                width: 100%;
+                font-weight: 500;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+                @include breakpoint(md){
+                    max-width: 400px;
+                    font-size: 14px;
+                }
+            }
+        }
+        .info-box{
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            align-items: center;
+            grid-gap: 30px;
+            @include breakpoint(sm){
+                grid-gap: 15px;
+            }
+            .icon{
+                background-color: var(--mt-color-theme-secondary);
+                height: 70px;
+                width: 70px;
+                @include flex-center;
+                border-radius: 50%;
+            }
+            .title{
+                font-size: 22px;
+                font-weight: 700;
+                margin-bottom: 0;
+                span{
+                    font-family: var(--mt-ff-body);
+                    font-size: 16px;
+                    display: block;
+                    font-weight: 400;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+/* !END: Theme Info CSS */

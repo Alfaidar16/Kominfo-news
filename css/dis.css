@@ -1,0 +1,61 @@
+.dis-btn {
+    z-index: 101;
+    position: fixed;
+    top: 200px;
+    left: 2px;
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 10px;
+    border-style: none;
+    padding-top: 8px;
+    padding-left: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    background-image: url('/images/dis-logo.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 3.8rem;
+}
+
+.dis-btn:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
+
+.dis-btn.active {
+    left: 202px;
+    transition: 0.3s ease;
+}
+
+.dis {
+    z-index: 100;
+    position: fixed;
+    background-color: white;
+    top: 200px;
+    left: -200px;
+    height: 300px;
+    width: 200px;
+    transition: 0.3s ease;
+}
+
+.dis.active {
+    left: 0;
+    transition: 0.3s ease;
+}
+
+.dis-header {
+    margin-top: 10px;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+}
+
+.dis-list {
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.dis-list:hover {
+    margin-left: 15px;
+    transition: 0.3s ease;
+}
