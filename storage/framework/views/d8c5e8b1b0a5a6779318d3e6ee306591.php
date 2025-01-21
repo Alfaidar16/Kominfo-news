@@ -15,7 +15,7 @@
                         
                         <ul class="sub-menu" >
                             <?php
-                                $menuUtama = DB::table('menu_itemss')->where('parent_id', '=', null)->where('menus_id', 3)->orderBy('id', 'ASC')->get();
+                                $menuUtama = DB::table('menu_itemss')->where('parent_id', '=', null)->where('menu_id', 3)->orderBy('id', 'ASC')->get();
                             ?>
                             <?php $__currentLoopData = $menuUtama; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $menu): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <li class="menu-item-has-children">

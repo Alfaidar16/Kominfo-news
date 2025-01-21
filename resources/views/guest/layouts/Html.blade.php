@@ -15,7 +15,7 @@
                         
                         <ul class="sub-menu" >
                             @php
-                                $menuUtama = DB::table('menu_itemss')->where('parent_id', '=', null)->where('menus_id', 3)->orderBy('id', 'ASC')->get();
+                                $menuUtama = DB::table('menu_itemss')->where('parent_id', '=', null)->where('menu_id', 3)->orderBy('id', 'ASC')->get();
                             @endphp
                             @foreach ($menuUtama as $menu)
                                 <li class="menu-item-has-children">
